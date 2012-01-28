@@ -45,7 +45,7 @@ class Template {
     if (empty($varArray))
       exit;
 
-    $lastID = (count($this->_infoTpl[$type]) != 0) ? (count($this->_infoTpl[$type])) : 0;
+    $lastID = (isset($this->_infoTpl[$type]) && count($this->_infoTpl[$type]) != 0) ? (count($this->_infoTpl[$type])) : 0;
     foreach($varArray as $constant => $data) 
       $this->_infoTpl[$type][$lastID][$constant] = $data;
   }
